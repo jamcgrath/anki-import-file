@@ -1,0 +1,117 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+body {
+  height: 100vh;
+}
+
+.container.qa-container {
+  height: calc(100vh - 170px);
+}
+
+.container>.navbar-header {
+  margin-right: 0;
+}
+
+.navbar-header:before,
+.navbar-header:after {
+  display: none;
+}
+
+.save-btn {
+  position: relative;
+}
+
+.save-btn:before,
+.save-btn:after {
+  display: none;
+  position: absolute;
+  opacity: 0;
+}
+
+.save-btn:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid gray;
+  top: 35px;
+}
+
+.save-btn:after {
+  content: 'Safari Users: right click & save as';
+  color: #fff;
+  left: 0;
+  top: 40px;
+  background: gray;
+  padding: 3px;
+  border-radius: 3px
+}
+
+.save-btn:hover:after,
+.save-btn:hover:before {
+  display: block;
+  opacity: 1;
+  animation: fadein .25s;
+
+}
+
+.anki-qa-wrap {
+  font-size: 1.25em;
+  max-height: calc(100% - 160px);
+  overflow: scroll;
+}
+
+.anki-qa-set {
+  position: relative;
+  padding: 0 0 10px  30px;
+}
+
+.anki-qa-set dd {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.anki-qa-set.last dd {
+  border-bottom: 0px;
+}
+
+.close-icon {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 5px;
+}
+
+ 
+
+form {
+  width: 48%;
+}
+
+form:first-of-type {
+  margin-bottom: 20px;
+}
+
+footer {
+  background: #415a60;
+  color: #fff;  
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin-top: 40px;
+  width: 100%;
+}
