@@ -62,14 +62,16 @@ function AnkiQaController() {
   this.saveFile = function() {
     var qaContent = document.getElementsByClassName('anki-qa');
     var fileArr = new Array();
-
     for(i = 0; i < qaContent.length; i++) {
-       fileArr.push(qaContent[i].innerText); 
+      if(i % 2 === 0) {
+        fileArr.push(qaContent[i].innerText + ", ");
+      } else {
+        fileArr.push(qaContent[i].innerText + "\n"); 
+      }
+       
     }
-    //fileArr.splice(-1, 1);
-    fileArr = fileArr.join(';');
-    fileArr += ';';
-
+    
+    fileArr = fileArr.join('');
     var blob = new Blob([fileArr], {type: "text/plain;charset=utf-8"});
     saveAs(blob, "flashcard-import-file.txt");
   }
