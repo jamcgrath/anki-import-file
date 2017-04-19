@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/angular.min.js"></script>
+  <script src="js/angular-sanitize.min.js"></script>
+
 
 </head>
 <body ng-controller="AnkiQaController as AnkiQa">
@@ -34,7 +36,7 @@
   <div class="container qa-container">
     <div class="anki-qa-wrap">
       <dl>
-        <div id="qa-{{$index}}" class="anki-qa-set" ng-repeat="qa in AnkiQa.qa"ng-class="{'last': $last}"  ng-cloak>
+        <div id="qa-{{$index}}" class="anki-qa-set" ng-repeat="qa in AnkiQa.qa" ng-class="{'last': $last}" ng-cloak>
           <span 
             class="glyphicon glyphicon-remove-circle close-icon" 
             aria-hidden="true" 
@@ -43,7 +45,7 @@
             ng-show="showIcon"
             ></span>
           <dt>
-            <span class="anki-qa" ng-dblclick="showEditQuestion = true;" ng-hide="showEditQuestion">{{ qa.question }}</span>
+            <span class="anki-qa" ng-dblclick="showEditQuestion = true;" ng-hide="showEditQuestion" ng-bind-html="qa.question"></span>
             <div class="form-group" ng-show="showEditQuestion">
               <form ng-submit="AnkiQa.updateField($index);">
                 <input 
@@ -58,7 +60,7 @@
             </div>
           </dt>
           <dd>
-            <span class="anki-qa" ng-dblclick="showEditAnswer = true;" ng-hide="showEditAnswer">{{ qa.answer}}</span>
+            <span class="anki-qa" ng-dblclick="showEditAnswer = true;" ng-hide="showEditAnswer" ng-bind-html="qa.question"></span>
             <div class="form-group" ng-show="showEditAnswer">
               <form ng-submit="AnkiQa.updateField($index);">
                 <input 

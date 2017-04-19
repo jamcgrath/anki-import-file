@@ -4089,11 +4089,6 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
     }
 }
 
-@media (min-width: 768px) {
-    .navbar-header {
-        /* float: none; */
-    }
-}
 
 .navbar-collapse {
     padding-right: 15px;

@@ -64,9 +64,9 @@ function AnkiQaController() {
     var fileArr = new Array();
     for(i = 0; i < qaContent.length; i++) {
       if(i % 2 === 0) {
-        fileArr.push(qaContent[i].innerText + ", ");
+        fileArr.push(qaContent[i].innerHTML + ", ");
       } else {
-        fileArr.push(qaContent[i].innerText + "\n"); 
+        fileArr.push(qaContent[i].innerHTML + "\n"); 
       }
        
     }

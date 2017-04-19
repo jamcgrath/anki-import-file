@@ -1,1 +1,1 @@
-angular.module('ankiFile', []);
+angular.module('ankiFile', ['ngSanitize']);
