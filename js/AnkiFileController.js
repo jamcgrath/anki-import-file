@@ -4,17 +4,14 @@ function AnkiQaController() {
   this.inputQue = document.getElementById('aQue');
   this.inputAns = document.getElementById('aAns');
   this.qa = [];
-
- // console.log(this.qa);
   
-
   this.addQuestion = function() {
     if(this.ankiAns.length === 0 ) {
       this.inputAns.focus();
     }
     if (this.ankiQue.length > 0 && this.ankiAns.length > 0) {
        this.addAnswer();
-     } 
+    } 
   }
 
   this.addAnswer = function() { 
@@ -50,7 +47,7 @@ function AnkiQaController() {
       return;
     }
     
-      this.inputQue.focus();
+    this.inputQue.focus();
   }
 
   this.removeQA = function($index) {
@@ -59,6 +56,7 @@ function AnkiQaController() {
     this.qa.splice($index, 1);
   }
 
+  //move savefile to directive
   this.saveFile = function() {
     var qaContent = document.getElementsByClassName('anki-qa');
     var fileArr = new Array();
@@ -68,7 +66,6 @@ function AnkiQaController() {
       } else {
         fileArr.push(qaContent[i].innerHTML + "\n"); 
       }
-       
     }
     
     fileArr = fileArr.join('');
